@@ -36,6 +36,7 @@ router.get('/', function(req, res) {
     res.json({message: 'Welcome to our API!'});
 });
 
+// Create a new vehicle and get all vehicles
 router.route('/vehicles')
     .post(async(req, res) => {
         var vehicle = new Vehicle(); // new instance of a vehicle
@@ -60,6 +61,7 @@ router.route('/vehicles')
         }
 });
 
+// get a single vehicle based on id
 router.route('/vehicles/:vehicle_id').get(async(req, res) => {
     try{
         res.json(await Vehicle.findById(req.params.vehicle_id));
@@ -69,6 +71,7 @@ router.route('/vehicles/:vehicle_id').get(async(req, res) => {
     }
 });
 
+// get vehicles based on make
 router.route('/vehicles/make/:make')
 .get(async(req, res) => {
     try{
@@ -79,6 +82,7 @@ router.route('/vehicles/make/:make')
     }
 });
 
+// get a vehicle based on color
 router.route('/vehicles/color/:color')
 .get(async(req, res) => {
     try {
