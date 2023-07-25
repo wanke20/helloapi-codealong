@@ -61,7 +61,7 @@ router.route('/vehicles')
         }
 });
 
-// get a single vehicle based on id
+// get a single vehicle based on given id
 router.route('/vehicles/:vehicle_id').get(async(req, res) => {
     try{
         res.json(await Vehicle.findById(req.params.vehicle_id));
@@ -71,7 +71,7 @@ router.route('/vehicles/:vehicle_id').get(async(req, res) => {
     }
 });
 
-// get vehicles based on make
+// get vehicles based on given make
 router.route('/vehicles/make/:make')
 .get(async(req, res) => {
     try{
@@ -82,7 +82,7 @@ router.route('/vehicles/make/:make')
     }
 });
 
-// get a vehicle based on color
+// get a vehicle based on given color
 router.route('/vehicles/color/:color')
 .get(async(req, res) => {
     try {
