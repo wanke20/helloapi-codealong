@@ -61,7 +61,7 @@ router.route('/vehicles')
         }
 });
 
-// get a single vehicle based on id
+// get a single vehicle based on given id
 router.route('/vehicles/:vehicle_id').get(async(req, res) => {
     try{
         res.json(await Vehicle.findById(req.params.vehicle_id));
